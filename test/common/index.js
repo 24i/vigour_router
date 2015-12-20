@@ -2,7 +2,9 @@ var theUrl = require('../../lib/index.js')
 var colors = require('colors-browserify') //eslint-disable-line
 var Observable = require('vigour-js/lib/observable')
 
-global.url = new theUrl.Constructor()
+global.url = new theUrl.Constructor({
+  // inject: require('vigour-router/lib/browser')
+})
 
 var a = global.bla = new Observable({
   val: 'yo'
@@ -10,6 +12,9 @@ var a = global.bla = new Observable({
 var b = global.bla2 = new Observable('yo2')
 
 url.set({
+  // inject: [
+  //   require('vigour-router/lib/browser.js')
+  // ], y u no work
   search: 'searchit!',
   'hello': {
     separator: ',',
