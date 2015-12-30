@@ -2,8 +2,15 @@ var theUrl = require('../../lib/index.js')
 var colors = require('colors-browserify') //eslint-disable-line
 var Observable = require('vigour-js/lib/observable')
 
+//
+theUrl.inject(
+  require('../../lib/browser.js')
+)
+
+console.log(theUrl)
+
 global.url = new theUrl.Constructor({
-  // inject: require('vigour-router/lib/browser')
+
 })
 
 var a = global.bla = new Observable({
@@ -11,7 +18,7 @@ var a = global.bla = new Observable({
 })
 var b = global.bla2 = new Observable('yo2')
 
-url.set({
+global.url.set({
   // inject: [
   //   require('vigour-router/lib/browser.js')
   // ], y u no work
@@ -21,21 +28,21 @@ url.set({
     indicator: '#',
     on: {
       data (data) {
-        if(!this.val) {
+        if (!this.val) {
           console.log('ok update my bitches! shit be gone!'.red)
         } else {
-          console.log('data creepin!.'.white.bold.inverse, this.val)
+          console.log('data creepin!'.white.bold.inverse, this.val)
         }
       }
     },
     val: a
   },
   '💩': {
-    separator: ',',
+    separator: '&',
     indicator: '#',
     on: {
       data (data) {
-        if(!this.val) {
+        if (!this.val) {
           console.log('ok update my bitches! shit be gone!'.red)
         } else {
           console.log('data creepin! burs'.magenta.inverse, data, this.val)
@@ -46,10 +53,10 @@ url.set({
   },
   'no': {
     separator: ',',
-    indicator: '#',
+    indicator: '/',
     on: {
       data (data) {
-        if(!this.val) {
+        if (!this.val) {
           console.log('ok update my bitches! shit be gone!'.red)
         } else {
           console.log('data creepin! burs'.magenta.inverse, data, this.val)

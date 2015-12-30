@@ -22,7 +22,7 @@
     "vigour-js": "^0.3.8"
   },
   "devDependencies": {
-    "colors-browserify": "~0.0.8",
+    "colors-browserify": "0.1.1",
     "chai-performance": "~0.1.1"
   },
   "main": "./lib",
