@@ -19,12 +19,12 @@
     "url": "https://github.com/vigour-io/router/issues"
   },
   "dependencies": {
-    "vigour-js": "^0.4.2"
+    "vigour-js": "^0.4.2",
+    "vigour-element": "~0.2.3"
   },
   "devDependencies": {
     "colors-browserify": "0.1.1",
-    "chai-performance": "~0.1.1",
-    "vigour-element": "~0.2.3"
+    "chai-performance": "~0.1.1"
   },
   "main": "./lib",
   "browser": {
